@@ -9,25 +9,32 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 var Lugaresimportantes_icon = L.icon({
-  iconUrl: 'iconos/aventuras1.png', 
+  iconUrl: 'aventuras1.png', 
   iconSize: [52, 54], 
   iconAnchor: [19, 32], 
   popupAnchor: [0, -32] 
 });
 
 var universidadicon = L.icon({
-  iconUrl: 'iconos/escuela.png', 
+  iconUrl: 'escuela.png', 
   iconSize: [52, 54], 
   iconAnchor: [19, 32], 
   popupAnchor: [0, -32] 
 });
 
 var Bienvenidos = L.icon({
-  iconUrl: 'iconos/aventuras.png', 
+  iconUrl: 'aventuras.png', 
   iconSize: [52, 54], 
   iconAnchor: [19, 32], 
   popupAnchor: [0, -32] 
 });
+var museo = L.icon({
+  iconUrl: 'museo.png', 
+  iconSize: [52, 54], 
+  iconAnchor: [19, 32], 
+  popupAnchor: [0, -32] 
+});
+
 
 
 
@@ -39,10 +46,10 @@ marker.bindPopup("<b>¡Bienvenidos a Aguascalientes!</b><br>Capital del Estado."
 var plazaPatria = L.marker([21.88187, -102.29495],{ icon: Lugaresimportantes_icon }).addTo(map);
 plazaPatria.bindPopup("<b>Plaza de la Patria</b><br>Corazón de Aguascalientes.");
 
-var museoMuerte = L.marker([21.88417, -102.28878],{ icon: Lugaresimportantes_icon }).addTo(map);
+var museoMuerte = L.marker([21.88417, -102.28878],{ icon: museo }).addTo(map);
 museoMuerte.bindPopup("<b>Museo Nacional de la Muerte</b><br>Un lugar único.");
 
-var museoDescu = L.marker([21.856523616394632, -102.2888649],{ icon: Lugaresimportantes_icon }).addTo(map);
+var museoDescu = L.marker([21.856523616394632, -102.2888649],{ icon: museo }).addTo(map);
 museoDescu.bindPopup("<b>Museo Descubre</b><br>Un lugar único.");
 
 
