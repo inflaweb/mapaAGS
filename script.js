@@ -7,22 +7,46 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap'
 }).addTo(map);
 
+
+var Lugaresimportantes_icon = L.icon({
+  iconUrl: 'iconos/aventuras1.png', 
+  iconSize: [52, 54], 
+  iconAnchor: [19, 32], 
+  popupAnchor: [0, -32] 
+});
+
+var universidadicon = L.icon({
+  iconUrl: 'iconos/escuela.png', 
+  iconSize: [52, 54], 
+  iconAnchor: [19, 32], 
+  popupAnchor: [0, -32] 
+});
+
+var Bienvenidos = L.icon({
+  iconUrl: 'iconos/aventuras.png', 
+  iconSize: [52, 54], 
+  iconAnchor: [19, 32], 
+  popupAnchor: [0, -32] 
+});
+
+
+
 // Añadir un marcador en Aguascalientes capital
-var marker = L.marker([21.88234, -102.28259]).addTo(map);
+var marker = L.marker([21.88234, -102.28259],{ icon: Bienvenidos }).addTo(map);
 marker.bindPopup("<b>¡Bienvenidos a Aguascalientes!</b><br>Capital del Estado.").openPopup();
 
 // Marcador en la Plaza de la Patria
-var plazaPatria = L.marker([21.88187, -102.29495]).addTo(map);
+var plazaPatria = L.marker([21.88187, -102.29495],{ icon: Lugaresimportantes_icon }).addTo(map);
 plazaPatria.bindPopup("<b>Plaza de la Patria</b><br>Corazón de Aguascalientes.");
 
-var museoMuerte = L.marker([21.88417, -102.28878]).addTo(map);
+var museoMuerte = L.marker([21.88417, -102.28878],{ icon: Lugaresimportantes_icon }).addTo(map);
 museoMuerte.bindPopup("<b>Museo Nacional de la Muerte</b><br>Un lugar único.");
 
-var museoDescu = L.marker([21.856523616394632, -102.2888649]).addTo(map);
+var museoDescu = L.marker([21.856523616394632, -102.2888649],{ icon: Lugaresimportantes_icon }).addTo(map);
 museoDescu.bindPopup("<b>Museo Descubre</b><br>Un lugar único.");
 
 
-var templodelsaver = L.marker([21.839413980219927, -102.35292191135225]).addTo(map);
+var templodelsaver = L.marker([21.839413980219927, -102.35292191135225],{ icon: universidadicon }).addTo(map);
 templodelsaver.bindPopup("<b> Unibersidad Tecnolojica Aguascaliente </b><br> universidad.");
 
 
@@ -62,7 +86,7 @@ var overlayMaps = {
   "Feria de San Marcos": feriaSanMarcos,
   "Centro Histórico": centroHistorico,
   "Universidades": templodelsaver,
-  "Festival" : losmuertitos
+  "Festival" : L.layerGroup([losmuertitos,feriaSanMarcos]),
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
